@@ -1,0 +1,19 @@
+[2024-01-31T00:00:04.677+0100] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: meteo_dag.print_meteo scheduled__2024-01-16T00:00:00+00:00 [queued]>
+[2024-01-31T00:00:04.687+0100] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: meteo_dag.print_meteo scheduled__2024-01-16T00:00:00+00:00 [queued]>
+[2024-01-31T00:00:04.687+0100] {taskinstance.py:2171} INFO - Starting attempt 1 of 2
+[2024-01-31T00:00:04.721+0100] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): print_meteo> on 2024-01-16 00:00:00+00:00
+[2024-01-31T00:00:04.735+0100] {standard_task_runner.py:60} INFO - Started process 17726 to run task
+[2024-01-31T00:00:04.741+0100] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'meteo_dag', 'print_meteo', 'scheduled__2024-01-16T00:00:00+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/meteoDag.py', '--cfg-path', '/tmp/tmpg5b_10hn']
+[2024-01-31T00:00:04.747+0100] {standard_task_runner.py:88} INFO - Job 52: Subtask print_meteo
+[2024-01-31T00:00:04.825+0100] {task_command.py:423} INFO - Running <TaskInstance: meteo_dag.print_meteo scheduled__2024-01-16T00:00:00+00:00 [running]> on host ubuntu.ubuntu.virtualbox.org
+[2024-01-31T00:00:04.937+0100] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='meteo_dag' AIRFLOW_CTX_TASK_ID='print_meteo' AIRFLOW_CTX_EXECUTION_DATE='2024-01-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-01-16T00:00:00+00:00'
+[2024-01-31T00:00:05.269+0100] {client.py:192} INFO - Instantiated <InsecureClient(url='http://localhost:9870')>.
+[2024-01-31T00:00:05.270+0100] {client.py:496} INFO - Writing to '/user/datalake/meteobrut/Datajours4/2024-01-31.json'.
+[2024-01-31T00:00:05.659+0100] {logging_mixin.py:188} INFO - Forecast data has been saved to /user/datalake/meteobrut/Datajours4/2024-01-31.json on HDFS
+[2024-01-31T00:00:05.994+0100] {client.py:192} INFO - Instantiated <InsecureClient(url='http://localhost:9870')>.
+[2024-01-31T00:00:05.994+0100] {client.py:496} INFO - Writing to '/user/datalake/meteobrut/DataCurrent/2024-01-31/00_00_03.json'.
+[2024-01-31T00:00:06.155+0100] {logging_mixin.py:188} INFO - Current weather data has been saved to /user/datalake/meteobrut/DataCurrent/2024-01-31/00_00_03.json on HDFS
+[2024-01-31T00:00:06.193+0100] {python.py:201} INFO - Done. Returned value was: None
+[2024-01-31T00:00:06.205+0100] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=meteo_dag, task_id=print_meteo, execution_date=20240116T000000, start_date=20240130T230004, end_date=20240130T230006
+[2024-01-31T00:00:06.287+0100] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-31T00:00:06.327+0100] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check
